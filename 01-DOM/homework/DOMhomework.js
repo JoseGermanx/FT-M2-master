@@ -10,7 +10,8 @@ let toDoItems = [];
 // Tu código acá:
 
 let insert = document.getElementById('createdBy');
-insert.innerHTML += " JG";
+let nombreDev = " JGerman"
+insert.innerHTML += nombreDev;
 
 
 
@@ -67,16 +68,10 @@ function buildToDo(todo, index) {
   if (todo.complete === true) {
     toDoText.className = "completeText";
   }
-  
 
+  toDoShell.appendChild(toDoText);
 
-
-
-
-
-  
-
-
+  return toDoShell;
 }
 
 // La función 'buildToDos' debe crear un array de objetos toDo y devolverlo
@@ -86,7 +81,14 @@ function buildToDo(todo, index) {
 
 function buildToDos(toDos) {
   // Tu código acá:
+  var arr = toDos.map(function(todo, i){
+    return  buildToDo(todo, i);
+  })
 
+  return arr;
+
+  //alternativa
+  // return toDos.map(buildToDo);
 }
 
 
@@ -102,6 +104,14 @@ function buildToDos(toDos) {
 function displayToDos() {
   // Tu código acá:
 
+  var toDoContainer = document.querySelector('#toDoContainer');
+  toDoContainer.innerHTML = "";
+
+  let result = buildToDos(toDoItems);
+  
+  result.map(function(element){
+    toDoContainer.append(element);
+  });
 }
 
 
@@ -116,7 +126,18 @@ function displayToDos() {
 
 function addToDo() {
   // Tu código acá:
-
+   //1
+   let value = document.getElementById('toDoInput').value;
+   //2
+   let newTodo = new ToDo(value)
+   //En la líena de abajo le agregue la condición de que si está vacio el input no avance
+   if(value) {
+   toDoItems.push(newTodo);
+   //3
+   document.getElementById('toDoInput').value = '';
+   //4
+   displayToDos();
+   }
 }
 
 // Agregar un 'Event Listener' para que cada vez que el botón 'AGREGAR' sea clickeado
@@ -125,7 +146,7 @@ function addToDo() {
 //   2) Agregarle un 'click' event listener, pasándole la función 'addToDo' como callback
 
 // Tu código acá:
-
+document.getElementById('addButton').addEventListener('click', addToDo);
 
 // La función completeToDo se va a ejecutar cuando queramos completar un todo
 // [NOTA: Algunas cuestiones a tener en cuenta
@@ -141,8 +162,14 @@ function addToDo() {
 
 function completeToDo(event) {
   // DESCOMENTAR LA SIGUIENTE LINEA
-  // const index = event.target.id;
+  const index = event.target.id;
   // Tu código acá:
+   //1
+   toDoItems[index].completeToDo();
+   //2
+   displayToDos();
+   //3
+   //ya se hizo
 
 }
 
@@ -163,6 +190,7 @@ function completeToDo(event) {
 
 
 // Acá debes insertar la llamada a 'displayToDos'
+displayToDos();
 
 
 // ---------------------------- NO CAMBIES NADA DE ACÁ PARA ABAJO ----------------------------- //
