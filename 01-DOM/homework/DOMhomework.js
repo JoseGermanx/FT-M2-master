@@ -64,6 +64,16 @@ function buildToDo(todo, index) {
   var toDoText = document.createElement('span');
   toDoText.innerHTML = todo.description;
   toDoText.id = index;
+/*    Investigá sobre el tipo 'checkbox' del elemento input y realizar lo siguiente en la función 'buildToDo':
+        a) Crer un checkbox en la función 'buildToDo'
+        b) Asignarle como id a dicho checkbox el valor del index y quitar el id del index de toDoText
+        c) Agregarle al checkbox el 'click' event listener de completeToDo y quitárle el event listener a toDoText
+        d) Asignarle la clase 'completeCheckbox' al checkbox
+        e) Dentro del bloque 'if' de la función buildToDo, si es true, setear el atributo 'checked' en true en el checkbox
+        f) Agregar el checkbox sobre el elemento 'toDoShell'
+*/
+  var checkbox = document.createElement('checkbox');
+  //checkbox.id = index;
 
   if (todo.complete === true) {
     toDoText.className = "completeText";
@@ -130,7 +140,7 @@ function addToDo() {
    let value = document.getElementById('toDoInput').value;
    //2
    let newTodo = new ToDo(value)
-   //En la líena de abajo le agregue la condición de que si está vacio el input no avance
+   //En la línea de abajo le agregue la condición de que si está vacio el input no avance
    if(value) {
    toDoItems.push(newTodo);
    //3
@@ -166,6 +176,7 @@ function completeToDo(event) {
   // Tu código acá:
    //1
    toDoItems[index].completeToDo();
+   //checkbox[index].completeToDo();
    //2
    displayToDos();
    //3
