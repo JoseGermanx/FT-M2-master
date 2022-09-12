@@ -201,6 +201,10 @@ footer {
 .home .intro p {
   padding: 0 15px;
 }
+.home .intro img {
+  padding-top: 0.7em;
+  border-radius: 20px;
+}
 .home .music-images {
   display: flex;
   flex-wrap: wrap;
