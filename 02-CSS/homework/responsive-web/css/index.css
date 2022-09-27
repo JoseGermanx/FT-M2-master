@@ -1,3 +1,11 @@
+.btn a {
+  color: #F6F6F6;
+  background-color: #22283A;
+  transition: background-color 0.5s;
+}
+.btn a:hover {
+  background-color: gold;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -161,29 +169,30 @@ p {
   margin: 0 auto;
 }
 nav {
-  background-color: #dad2d2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6F6F6;
+  border: #F1F1F1 solid 2px;
+  padding-top: 10px;
 }
-.menu-heading {
-  text-align: center;
-  padding-top: 0.5em;
-  font-size: 6em;
+nav .menu .menu-heading h1 {
+  font-size: 30px;
 }
-.menu ul {
-  list-style-type: none;
-  text-align: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  padding: 10px;
 }
-.menu li {
-  display: inline;
-  text-align: center;
-  margin: 0 10px 0 0;
-  font-size: 1.5em;
-}
-.menu li a {
-  padding: 2px 7px 2px 7px;
-  color: #666;
+nav a {
   text-decoration: none;
+  color: #454A59;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 footer {
   color: #22283B;
@@ -240,6 +249,10 @@ footer {
 }
 .home .actual .actual-text p {
   margin-bottom: 26px;
+}
+.home .actual .actual-text .btn a {
+  text-decoration: none;
+  font-size: 1.7em;
 }
 .home .actual .actual-img {
   width: 46%;

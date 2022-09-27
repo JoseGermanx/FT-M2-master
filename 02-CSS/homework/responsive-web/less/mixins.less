@@ -1,1 +1,18 @@
 // Mixins acá
+.btn {
+a {
+color: @wild-sand;
+background-color: @btn-bg-color;
+transition: background-color .5s;
+}
+a:hover {
+    background-color: gold;
+  }
+}
+
+.flex(@direction: row, @justify: center, @align: center) {
+    display: flex;
+    flex-direction: @direction;
+    justify-content: @justify;
+    align-items: @align;
+}
