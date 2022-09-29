@@ -1,0 +1,36 @@
+.contenedor {
+    border: rgba(198, 194, 194, 0.706) solid 1px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 175px;
+    position: relative;
+}
+
+.btn {
+    width: min-content;
+    height: min-content;
+    background-color: rgba(255, 0, 0, 0.718);
+    position:absolute;
+    right: 5px;
+    top: 5px;
+    border: none;
+    border-radius: 7px;
+    color: white;
+
+}
+
+.infoCont {
+    display: flex;
+    justify-content:space-around;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+
+.infoCont img {
+    
+    background-color: rgba(201, 193, 193, 0.565);
+    border-radius: 5px;
+}
