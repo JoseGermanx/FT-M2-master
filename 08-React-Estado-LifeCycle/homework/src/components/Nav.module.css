@@ -1,0 +1,23 @@
+
+.contenedor {
+background-color: grey;
+display: flex;
+justify-content: column;
+}
+.Logo {
+  width: 30px;
+}
+
+.contenedor h1 {
+  font-size: 2em;
+  color: white;
+
+}
+
+.button {
+    background-color: rgba(255, 0, 0, 0.718);
+    border-radius: 10px;
+    border: none;
+    color: white;
+
+}

@@ -1,0 +1,7 @@
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 10px;
+    margin: 10px 10px 10px 10px;
+}

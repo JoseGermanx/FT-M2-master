@@ -1,28 +1,47 @@
-import React from 'react';
-import './Card.css';
+import React from "react";
+import estilos from "./Card.module.css";
 
-export default function Card ({min, max, name, img, onClose, id}) {
-    return (
-      <div className="card">
-        <div id="closeIcon" className="row">
-            <button onClick={onClose} className="btn btn-sm btn-danger">X</button>
+export default function Card({
+  min,
+  max,
+  img,
+  id,
+  wind,
+  temp,
+  name,
+  weather,
+  clouds,
+  latitud,
+  longitud,
+  pais,
+onClose}
+) {
+  // acá va tu código
+
+  return (
+    <div className={estilos.contenedor}>
+      <button onClick={onClose} className={estilos.btn}>
+        X
+      </button>
+      <h4>{name}</h4>
+      <div className={estilos.infoCont}>
+        <div>
+          <h6>Min</h6>
+          <p>{min}°</p>
         </div>
-        <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-          <div className="row">
-            <div className="col-sm-4 col-md-4 col-lg-4">
-              <p>Min</p>
-              <p>{min}°</p>
-            </div>
-            <div className="col-sm-4 col-md-4 col-lg-4">
-              <p>Max</p>
-              <p>{max}°</p>
-            </div>
-            <div className="col-sm-4 col-md-4 col-lg-4">
-              <img className="iconoClima" src={"http://openweathermap.org/img/wn/"+img+"@2x.png"} width="80" height="80" alt="" />
-            </div>
-          </div>
+        <div>
+          <h6>Max</h6>
+          <p>{max}°</p>
         </div>
+        <div className="bandera">
+          <img  src={`https://flagcdn.com/32x24/${pais}.png`} alt="Pais"/>
+       </div>
+        
+        <img
+          src={`http://openweathermap.org/img/wn/${img}@2x.png`}
+          alt="img not found"
+        />
       </div>
-    );
-};
+    </div>
+  );
+}
