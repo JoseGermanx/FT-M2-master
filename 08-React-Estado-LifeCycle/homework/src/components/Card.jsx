@@ -23,7 +23,18 @@ onClose}
       <button onClick={onClose} className={estilos.btn}>
         X
       </button>
-      <h4>{name}</h4>
+      <div className={estilos.tituloCard}>
+      <div>
+        <h4>{name}</h4>
+      </div>
+      <span className={estilos.bandera}>
+          <img  src={`https://flagcdn.com/16x12/${pais}.png`} alt="Pais"/>
+      </span>
+      </div>
+      <div className={estilos.temp}>
+          <h6>Temperatura</h6>
+          <p>{temp}°</p>
+      </div>
       <div className={estilos.infoCont}>
         <div>
           <h6>Min</h6>
@@ -33,11 +44,7 @@ onClose}
           <h6>Max</h6>
           <p>{max}°</p>
         </div>
-        <div className="bandera">
-          <img  src={`https://flagcdn.com/32x24/${pais}.png`} alt="Pais"/>
-       </div>
-        
-        <img
+          <img
           src={`http://openweathermap.org/img/wn/${img}@2x.png`}
           alt="img not found"
         />

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { Route } from 'react-router-dom';
 
 import './App.css';
 import Nav from '../components/Nav.jsx';
 import Cards from '../components/Cards.jsx';
+import About from '../components/About.jsx';
 
 const apiKey = 'Aqui va la API key que creaste';
 
@@ -44,6 +46,7 @@ function App() {
         return null;
     }
   }
+  
   return (
     <div className="App">
       <Nav onSearch={onSearch}/>
@@ -55,6 +58,8 @@ function App() {
       </div>
       <hr />
     </div>
+
+    
   );
 }
 

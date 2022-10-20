@@ -21,6 +21,7 @@ export default function Cards({cities, onClose}) {
           img = {city.img}
           pais = {city.pais}
           sensacion = {city.sensacion}
+          temp = {city.temp}
           onClose= {() => onClose(city.id)}
           />
         ))
